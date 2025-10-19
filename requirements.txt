@@ -1,6 +1,10 @@
 fastapi
-uvicorn
+uvicorn[standard]
 jinja2
-pandas
-python-multipart
+aiofiles
 requests
+pandas
+gspread
+oauth2client
+plotly
+python-multipart
