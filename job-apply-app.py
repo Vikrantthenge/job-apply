@@ -10,7 +10,7 @@ Features:
 - Self-creates minimal templates in ./templates and mounts ./static
 
 Run:
-  export OPENAI_API_KEY="sk-..."
+  export OPENAI_API_KEY="sk-"
   uvicorn main:app --reload --host 0.0.0.0 --port 8000
 """
 
