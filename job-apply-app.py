@@ -1,5 +1,5 @@
 """
-main.py - Job Bot (FastAPI) with Jooble (hardcoded key) + OpenAI rewrite + optional Google Sheets sync
+job-apply-app.py - Job Bot (FastAPI) with Jooble (hardcoded key) + OpenAI rewrite + optional Google Sheets sync
 
 Features:
 - Job search via Jooble free API (hardcoded key)
@@ -11,7 +11,7 @@ Features:
 
 Run:
   export OPENAI_API_KEY="sk-"
-  uvicorn main:app --reload --host 0.0.0.0 --port 8000
+  uvicorn job-apply-app --reload --host 0.0.0.0 --port 8000
 """
 
 import os
