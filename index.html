@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Bot by Vikrant</title>
+  <link rel="icon" href="/static/your_logo.png">
+  <style>
+    body { font-family: sans-serif; margin: 40px; }
+    h1 { color: darkred; }
+    .section { margin-top: 40px; }
+    .footer { margin-top: 60px; font-size: 14px; color: gray; text-align: center; }
+    input, textarea, select, button { margin-top: 8px; display: block; width: 100%; max-width: 480px; padding: 8px; }
+    button { background-color: #d62828; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #a61c1c; }
+  </style>
+</head>
+<body>
+  <div style="text-align: center;">
+    <img src="/static/your_logo.png" width="360">
+    <h1>🧭 Job Bot by Vikrant Thenge</h1>
+  </div>
+
+  <div class="section">
+    <h2>📤 Upload Resume</h2>
+    <form action="/parse_resume" method="post" enctype="multipart/form-data">
+      <input type="file" name="resume" required>
+      <button type="submit">Extract Keywords</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>🧠 Rewrite Resume Bullet</h2>
+    <form action="/rewrite_bullet" method="post">
+      <textarea name="bullet" rows="3" placeholder="Paste your bullet here..." required></textarea>
+      <select name="tone">
+        <option value="assertive">Assertive</option>
+        <option value="formal">Formal</option>
+        <option value="friendly">Friendly</option>
+      </select>
+      <button type="submit">Rewrite Bullet</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>🎯 Job Search Filters</h2>
+    <form action="/job_results" method="post">
+      <input type="text" name="keywords" placeholder="Keywords (e.g. Python, BI)" required>
+      <input type="text" name="location" placeholder="Location (e.g. Mumbai)" required>
+      <input type="number" name="num_pages" value="1" min="1">
+      <input type="number" name="min_salary_lpa" value="24" min="0">
+      <label><input type="checkbox" name="include_unspecified" checked> Include 'Not disclosed' salaries</label>
+      <button type="submit">Search Jobs</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>🚀 Auto Apply + Download CSV</h2>
+    <form action="/auto_apply" method="post" enctype="multipart/form-data">
+      <input type="file" name="resume" required>
+      <input type="text" name="jobs" placeholder="Comma-separated company names" required>
+      <input type="text" name="keyword" placeholder="Keyword used" required>
+      <input type="text" name="location" placeholder="Location used" required>
+      <button type="submit">Apply + Download CSV</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>📉 Drift Monitor</h2>
+    <form action="/drift_monitor" method="post" enctype="multipart/form-data">
+      <input type="file" name="old_csv" required>
+      <input type="file" name="new_csv" required>
+      <button type="submit">Compare Job Title Trends</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    · Built with ❤️ using FastAPI · Resume parsing enabled · Bullet rewriting active · Job search filters applied · Auto-apply logic integrated · Google Sheets logging live · Recruiter metrics available · Drift monitoring supported · Salary filter ≥ ₹24 LPA active ·
+  </div>
+</body>
+</html>
